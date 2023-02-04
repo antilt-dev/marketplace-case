@@ -1,6 +1,7 @@
 import { BaseDB } from "./BaseDB";
 
 export class Migrations extends BaseDB{
+    TABLE_NAME = ""
     createTables = async ()=>{
         await BaseDB.connection.raw(
             `
@@ -13,6 +14,7 @@ export class Migrations extends BaseDB{
 
             CREATE TABLE IF NOT EXISTS users_images(
                 id VARCHAR(100) PRIMARY KEY,
+                link VARCHAR(100) NOT NULL UNIQUE,
                 user_id VARCHAR(100) NOT NULL UNIQUE,
                 FOREIGN KEY (user_id) REFERENCES users(id)
             );
