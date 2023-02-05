@@ -1,6 +1,7 @@
+import { AddressDTO } from "../models/AddressDTO";
 import { BaseDB } from "./BaseDB";
 
-export class UserDB extends BaseDB{
+export class UsersDB extends BaseDB{
     TABLE_NAME = "users"
     
 
@@ -27,5 +28,13 @@ export class UserDB extends BaseDB{
         await BaseDB.connection(this.TABLE_NAME)
         .where({id})
         .update({phone})
+    }
+    public async changeAddress(id:string,newAddress:AddressDTO):Promise<void>{
+        const {country,state,city,zipcode,address} = newAddress
+
+        await BaseDB.connection(this.TABLE_NAME)
+        .select()
+        .where({id})
+        .update({country,state,city,zipcode,address})
     }
 }
