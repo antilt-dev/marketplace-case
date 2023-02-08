@@ -4,6 +4,6 @@ export interface UserDTO{
     phone:string,
     zipcode:string,
     buildingNumber:number,
-    unitNumber:number
+    unitNumber:string
 
 }

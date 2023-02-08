@@ -19,6 +19,7 @@
     "@types/knex": "^0.16.1",
     "@types/node": "^18.11.18",
     "@types/uuid": "^9.0.0",
+    "axios": "^1.3.2",
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
