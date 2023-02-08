@@ -34,12 +34,13 @@ export class SignUpBusiness{
                 statusCode = 412
                 throw new CustomError(statusCode,'É necessário informar o número da casa/prédio.')
             }
-            if(isNaN(buildingNumber)||isNaN(unitNumber)){
-                
+            if(isNaN(buildingNumber)){
+                statusCode = 406
+                throw new CustomError(statusCode,'Deve ser fornecido apenas números no campo "Número da casa/apartamento"')
             }
 
            
-            
+                
 
 
 
